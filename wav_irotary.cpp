@@ -39,10 +39,12 @@ void WavRotary::pushInterrupt()
         if(time>TIME_LONG_PRESS)
         {
                 _events.setEventsFromISR(LONG_PRESS);
-        }
-        if(time>TIME_SHORT_PRESS)
+        }else
         {
-                _events.setEventsFromISR(SHORT_PRESS);
+            if(time>TIME_SHORT_PRESS)
+            {
+                    _events.setEventsFromISR(SHORT_PRESS);
+            }
         }
     }
 }
